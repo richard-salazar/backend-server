@@ -23,9 +23,9 @@ exports.verificaToken = function(req, res, next) {
 
         next();
 
-        // res.status(200).json({
-        //     ok: true,
-        //     decoded: decoded
-        // });
+        //  res.status(200).json({
+        //      ok: true,
+        //      decoded: decoded
+        //  });
     });
 }
