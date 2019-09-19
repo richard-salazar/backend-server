@@ -1,11 +1,11 @@
 //Requires
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+let express = require('express');
+let mongoose = require('mongoose');
+let bodyParser = require('body-parser');
 
 
 //Inicializar Variables
-var app = express();
+let app = express();
 
 
 //Body Parser
@@ -14,14 +14,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //Importar rutas
-var appRoutes = require('./routes/app');
-var loginRoutes = require('./routes/login');
-var usuarioRoutes = require('./routes/usuario');
-var hospitalRoutes = require('./routes/hospital');
-var medicoRoutes = require('./routes/medico');
-var busquedaRoutes = require('./routes/busqueda');
-var uploadRoutes = require('./routes/upload');
-var imagenesRoutes = require('./routes/imagenes');
+let appRoutes = require('./routes/app');
+let loginRoutes = require('./routes/login');
+let usuarioRoutes = require('./routes/usuario');
+let hospitalRoutes = require('./routes/hospital');
+let medicoRoutes = require('./routes/medico');
+let busquedaRoutes = require('./routes/busqueda');
+let uploadRoutes = require('./routes/upload');
+let imagenesRoutes = require('./routes/imagenes');
 
 
 
@@ -34,7 +34,7 @@ mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB', (err, res) =
 });
 
 //Serve index config
-// var serveIndex = require('serve-index');
+// let serveIndex = require('serve-index');
 // app.use(express.static(__dirname + '/'))
 // app.use('/uploads', serveIndex(__dirname + '/uploads'));
 

@@ -1,9 +1,9 @@
-var express = require('express');
-var app = express();
+let express = require('express');
+let app = express();
 
-var Hospital = require('../models/hospital');
-var Medico = require('../models/medico');
-var Usuario = require('../models/usuario');
+let Hospital = require('../models/hospital');
+let Medico = require('../models/medico');
+let Usuario = require('../models/usuario');
 
 
 

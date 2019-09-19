@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
-var medicoSchema =	new Schema({
+let medicoSchema =	new Schema({
 
     nombre: { type: String,	required: [true, 'El nombre	es necesario'] },
     img: { type: String,	required: false },

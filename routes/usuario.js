@@ -1,11 +1,11 @@
-var express = require('express');
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
+let express = require('express');
+let bcrypt = require('bcryptjs');
+let jwt = require('jsonwebtoken');
 
-var mdAutenticacion = require('../middlewares/autenticacion');
+let mdAutenticacion = require('../middlewares/autenticacion');
 
-var app = express();
-var Usuario = require('../models/usuario');
+let app = express();
+let Usuario = require('../models/usuario');
 
 
 // ===========================================
@@ -13,7 +13,7 @@ var Usuario = require('../models/usuario');
 // ===========================================
 app.get('/', (req, res, next) => {
 
-    var desde = req.query.desde || 0;
+    let desde = req.query.desde || 0;
     desde = Number(desde);
 
     Usuario.find({}, 'nombre email img role')
@@ -48,8 +48,8 @@ app.get('/', (req, res, next) => {
 // ===========================================
 app.put('/:id', mdAutenticacion.verificaToken, (req, res) => {
 
-    var id = req.params.id
-    var body = req.body;
+    let id = req.params.id
+    let body = req.body;
 
     Usuario.findById(id, (err, usuario) => {
 
@@ -98,9 +98,9 @@ app.put('/:id', mdAutenticacion.verificaToken, (req, res) => {
 // ===========================================
 app.post('/', mdAutenticacion.verificaToken, (req, res) => {
 
-    var body = req.body;
+    let body = req.body;
 
-    var usuario = new Usuario({
+    let usuario = new Usuario({
         nombre: body.nombre,
         email: body.email,
         password: bcrypt.hashSync(body.password, 10),
@@ -133,7 +133,7 @@ app.post('/', mdAutenticacion.verificaToken, (req, res) => {
 // ===========================================
 app.delete('/:id', mdAutenticacion.verificaToken, (req, res)=>{
 
-    var id = req.params.id;
+    let id = req.params.id;
 
     Usuario.findByIdAndRemove(id, (err, usuarioBorrado)=>{
         if(err){
